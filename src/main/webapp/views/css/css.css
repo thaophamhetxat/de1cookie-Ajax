@@ -1,0 +1,32 @@
+.btn {
+    cursor: pointer;
+    background: #fff;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 0px;
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    margin-right: 3%;
+    width: 20%;
+    -webkit-box-shadow: 0 3px 0 rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 3px 0 rgba(0,0,0,0.1);
+    -o-box-shadow: 0 3px 0 rgba(0,0,0,0.1);
+    box-shadow: 0 3px 0 rgba(0,0,0,0.1);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+}
+.btn.default {
+    background: #cf80ad;
+}
+.btn.error {
+    background: #f32750;
+}
+.btn.info {
+    background: #2d9cee;
+}
+.btn.success {
+    background: #15cc1f;
+}

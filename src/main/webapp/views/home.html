@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+<h1 style="text-align: center">Home</h1>
+
+<a href="/create">Create</a>|<a href="/menu">admin</a>
+<p><h4>Thong bao (<span th:text="${cookie.getValue()}" style="color: red" id="id1"></span>)
+</h4></p ><br>
+<div>
+    <div class="modal-content">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>article_title</th>
+                <th>article_content</th>
+                <th>updated_date</th>
+                <th>is_approve</th>
+                <th>status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="list,loop : ${list}">
+                <td th:text="${list.article_id}"></td>
+                <td th:text="${list.article_title}"></td>
+                <td th:text="${list.article_content}"></td>
+                <td th:text="${list.updated_date}"></td>
+                <td th:text="${list.is_approve}"></td>
+                <td>
+                    <a  th:href="@{/fix/{article_id}(article_id = ${list.article_id})}">Edit</a>|
+                    <a th:href="@{/approve/{article_id}(article_id = ${list.article_id})}">Approve</a>|
+                    <a th:href="@{/remove/{article_id}(article_id = ${list.article_id})}">No approve</a>|
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
